@@ -1,6 +1,5 @@
 package com.example.sns.model.entity;
 
-import com.example.sns.model.UserRole;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;

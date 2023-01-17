@@ -12,4 +12,6 @@ public interface AlarmEntityRepository extends JpaRepository<AlarmEntity, Intege
 
     Page<AlarmEntity> findAllByUser(UserEntity user, Pageable pageable);
 
+    Page<AlarmEntity> findAllByUserId(Integer userId, Pageable pageable);
+
 }
