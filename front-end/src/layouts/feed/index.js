@@ -69,6 +69,12 @@ function Feed() {
   const [dialogMessage, setDialogMessage] = React.useState('');
   const navigate = useNavigate();
 
+  const handleDetail = (post) => {
+    console.log('handleDetail');
+    console.log(post);
+    navigate('/post-detail', { state: post });
+  };
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -125,11 +131,17 @@ function Feed() {
                   </Grid>
                   <Grid item xs={6}>
                     <MDTypography variant="body2" textAlign="right">
-                      {post.user.name}
+                      {post.user.userName}
                     </MDTypography>
                   </Grid>
                 </Grid>
                 <MDTypography variant="body2">{post.body}</MDTypography>
+                <Grid container>
+                  <Grid item xs={11}></Grid>
+                  <Grid item xs={1}>
+                    <Button onClick={() => handleDetail(post)}>Detail</Button>
+                  </Grid>
+                </Grid>
               </MDBox>
             </Card>
           </MDBox>
